@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Color Run</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <div id="game-container">
+            <canvas id="gameCanvas"></canvas>
+            <div id="ui-layer">
+                <div id="pause-btn">
+                    <span></span>
+                </div>
+                <div id="score-board">
+                    <div id="current-score">0</div>
+                    <div id="high-score">最高: 0</div>
+                </div>
+            </div>
+            <div id="start-screen">
+                <h1>COLOR RUN</h1>
+                <p>点击或触摸开始</p>
+            </div>
+            <div id="game-over-screen" class="hidden">
+                <h2>GAME OVER</h2>
+                <p id="final-score">得分: 0</p>
+                <p id="final-high-score">最高: 0</p>
+                <p id="restart-hint">点击或触摸重新开始</p>
+            </div>
+            <div id="pause-screen" class="hidden">
+                <div id="pause-panel">
+                    <h3>设置</h3>
+                    <div class="setting-item">
+                        <label>音效</label>
+                        <input type="checkbox" id="sound-toggle" checked>
+                    </div>
+                    <div class="setting-item">
+                        <label>音量</label>
+                        <input type="range" id="volume-slider" min="0" max="100" value="50">
+                    </div>
+                    <div class="setting-item">
+                        <label>速度</label>
+                        <input type="range" id="speed-slider" min="0.5" max="5" step="0.1" value="2">
+                        <span id="speed-value">2.0x</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>角色大小</label>
+                        <input type="range" id="size-slider" min="10" max="30" value="15">
+                        <span id="size-value">15</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>无敌模式</label>
+                        <input type="checkbox" id="invincible-toggle">
+                    </div>
+                    <button id="resume-btn">返回游戏</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="patterns.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
